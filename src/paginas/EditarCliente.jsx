@@ -12,7 +12,7 @@ const EditarCliente = () => {
     
     const obtenerClienteAPI = async () => {
       try {
-        const url = `http://localhost:4000/clientes/${id}`;
+        const url = `${import.meta.env.VITE_API_URL}/${id}`;
         const respuesta = await fetch(url);
         const resultado = await respuesta.json();
         setCliente(resultado);
@@ -36,7 +36,7 @@ const EditarCliente = () => {
             cliente={cliente}
             cargando={cargando}
           />
-        ): <p className='text-indigo-600 text-bold text-2xl'>No existen Registros de este Cliente</p>}
+        ): <p className='text-indigo-600 text-bold text-xl'>No existen Registros de este Cliente</p>}
         
     </>
   )
